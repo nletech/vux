@@ -2,10 +2,10 @@ import map from 'array-map'
 import find from 'array-find'
 
 const specialMap = {
-  '北京市': '110100',
-  '天津市': '120100',
-  '上海市': '310100',
-  '重庆市': '500100'
+  '北京市': '110000',
+  '天津市': '120000',
+  '上海市': '310000',
+  '重庆市': '500000'
 }
 
 export default function (name, list) {
@@ -23,7 +23,8 @@ export default function (name, list) {
         }
       }
       return find(list, item => {
-        return item.name === one && item.parent === parent.value
+        // return item.name === one && item.parent === parent.value
+        return item.name === one
       })
     } else {
       if (index === 1 && specialMap[name[0]]) {
